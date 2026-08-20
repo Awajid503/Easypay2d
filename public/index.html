@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Easypay 2D Card Payment</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #f4f7f9;
+      font-family: Arial, sans-serif;
+      color: #17202a;
+    }
+
+    .container {
+      max-width: 440px;
+      margin: 25px auto;
+    }
+
+    .payment-card {
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 34px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .logo span {
+      color: #8bc34a;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 23px;
+      margin: 10px 0;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #68737d;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-top: 15px;
+      margin-bottom: 7px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ccd3d8;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #8bc34a;
+    }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      margin-top: 22px;
+      border: none;
+      border-radius: 10px;
+      background: #8bc34a;
+      color: #173000;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:active {
+      transform: scale(0.99);
+    }
+
+    .security {
+      margin-top: 20px;
+      padding: 14px;
+      background: #f5f8f3;
+      border-radius: 10px;
+      color: #5f6b63;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 18px;
+      color: #777;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="payment-card">
+
+      <div class="logo">
+        <span>easy</span>pay
+      </div>
+
+      <h1>Secure Card Payment</h1>
+
+      <div class="subtitle">
+        Credit / Debit Card Checkout
+      </div>
+
+      <form
+        method="POST"
+        action="/api/start-payment"
+      >
+
+        <label for="amount">
+          Amount (PKR)
+        </label>
+
+        <input
+          id="amount"
+          name="amount"
+          type="number"
+          min="1"
+          step="0.01"
+          placeholder="Enter amount"
+          required
+        >
+
+        <label for="orderRefNum">
+          Order ID
+        </label>
+
+        <input
+          id="orderRefNum"
+          name="orderRefNum"
+          type="text"
+          placeholder="ORDER-10001"
+          required
+        >
+
+        <label for="emailAddr">
+          Email Address
+        </label>
+
+        <input
+          id="emailAddr"
+          name="emailAddr"
+          type="email"
+          placeholder="customer@example.com"
+          required
+        >
+
+        <label for="mobileNum">
+          Mobile Number
+        </label>
+
+        <input
+          id="mobileNum"
+          name="mobileNum"
+          type="tel"
+          placeholder="03XXXXXXXXX"
+          required
+        >
+
+        <button type="submit">
+          Pay with Credit / Debit Card
+        </button>
+
+      </form>
+
+      <div class="security">
+        🔒 Your card details are entered on the
+        authorized Easypay checkout page.
+        <br><br>
+        This website does not collect or store
+        card number, CVV or PIN.
+      </div>
+
+    </div>
+
+    <div class="footer">
+      Secure payment powered through Easypay
+    </div>
+
+  </div>
+
+</body>
+</html>
