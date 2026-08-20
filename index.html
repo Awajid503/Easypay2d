@@ -1,0 +1,8 @@
+<!doctype html><meta name="viewport" content="width=device-width"><title>Easypay 2D Card Payment</title>
+<style>body{font-family:Arial;background:#f4f7f9;margin:0}.box{max-width:430px;margin:35px auto;background:#fff;padding:25px;border-radius:18px;box-shadow:0 8px 30px #0002}input,button{width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;border-radius:10px}input{border:1px solid #ccd3d8}button{border:0;background:#8bc34a;font-weight:bold;font-size:16px}</style>
+<div class="box"><h2>Easypay Secure Payment</h2><p>Credit / Debit Card Checkout</p><form method="post" action="/api/start-payment">
+<label>Amount (PKR)</label><input name="amount" type="number" min="1" step=".01" required>
+<label>Order ID</label><input name="orderRefNum" required>
+<label>Email</label><input name="emailAddr" type="email" required>
+<label>Mobile</label><input name="mobileNum" required>
+<button>Pay with Credit / Debit Card</button></form><small>Card details are entered on the authorized Easypay checkout. This page does not collect card number, CVV or PIN.</small></div>

@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "easypay2d",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-20",
+  "assets": {"directory": "./public"},
+  "vars": {
+    "EASYPAY_PG_URL": "https://easypay.easypaisa.com.pk/easypay/Index.jsf",
+    "EASYPAY_CONFIRM_URL": "https://easypay.easypaisa.com.pk/easypay/Confirm.jsf"
+  }
+}
